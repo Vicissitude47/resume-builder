@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').Config} */
+const config = {
+  // Enable Edge Runtime for Vercel edge functions
+  experimental: {
+    serverActions: true,
+    turbo: {
+      rules: {
+        // Disable the default font loading rules
+        '*.woff2': ['raw'],
+      },
+    },
+  },
+  // Output standalone build for better deployment performance
+  output: 'standalone',
 };
 
-export default nextConfig;
+export default config;
