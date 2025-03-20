@@ -2,7 +2,9 @@
 const config = {
   // Enable Edge Runtime for Vercel edge functions
   experimental: {
-    serverActions: true,
+    serverActions: {
+      bodySizeLimit: '2mb'
+    },
     turbo: {
       rules: {
         // Disable the default font loading rules
